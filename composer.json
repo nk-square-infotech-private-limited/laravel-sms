@@ -1,0 +1,38 @@
+{
+    "name": "nksquare/laravel-sms",
+    "description": "Laravel wrapper for Nksquare/Sms library",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Thungdemo Ezong",
+            "email": "tezong@nksquare.co.in"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/config": "^5.6",
+        "illuminate/support": "^5.6",
+        "nksquare/sms": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/nk-square/sms.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Nksquare\\LaravelSms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nksquare\\LaravelSms\\Providers\\SmsServiceProvider"
+            ],
+            "aliases": {
+                "Sms": "Nksquare\\LaravelSms\\Facades\\Sms"
+            }
+        }
+    }
+}
