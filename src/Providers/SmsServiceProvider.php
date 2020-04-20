@@ -4,6 +4,7 @@ namespace Nksquare\LaravelSms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Nksquare\Sms\Client;
+use Nksquare\Sms\Drivers\DriverInterface;
 use Nksquare\Sms\Drivers\Textlocal;
 use Nksquare\LaravelSms\Exceptions\DriverNotFoundException;
 
@@ -16,7 +17,7 @@ class SmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('nksquare.sms', function ($app) {
+        $this->app->bind(DriverInterface::class, function ($app) {
             $config = $app->config;
             switch ($config['sms.default']) {
                 case 'textlocal':

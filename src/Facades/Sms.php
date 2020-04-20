@@ -3,6 +3,7 @@
 namespace Nksquare\LaravelSms\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Nksquare\Sms\Drivers\DriverInterface;
 
 /**
  * Facade for the SMS provider
@@ -16,6 +17,6 @@ class Sms extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'nksquare.sms';
+        return DriverInterface::class;
     }
 }
