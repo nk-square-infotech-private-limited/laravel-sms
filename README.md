@@ -1,6 +1,7 @@
 # laravel-sms
 Laravel wrapper for Nksquare/Sms library
-
+## Dependencies
+This library requires [nk-square/sms](https://github.com/nk-square/sms)
 ## Installation
 Add the following lines to your composer.json file
 ```
