@@ -12,7 +12,7 @@
         "php": "^7.1",
         "illuminate/config": "^5.6|^6.0|^7.0",
         "illuminate/support": "^5.6|^6.0|^7.0",
-        "nksquare/sms": "^1.0"
+        "nksquare/sms": "^2.0"
     },
     "repositories": [
         {
