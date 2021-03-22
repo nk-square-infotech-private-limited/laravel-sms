@@ -24,6 +24,7 @@ class SmsServiceProvider extends ServiceProvider
                     $driver = new Textlocal([
                         'apikey' => $config['sms.drivers.textlocal.apikey'],
                         'sender' => $config['sms.drivers.textlocal.sender'],
+                        'test' => $config['sms.drivers.textlocal.test'] ?? false
                     ]);
                     break;
                 

@@ -23,6 +23,7 @@ return [
         'textlocal' => [
             'apikey' => env('TEXTLOCAL_APIKEY'),
             'sender' => env('TEXTLOCAL_SENDER'),
+            'test' => true,
         ]
     ]
 ];
