@@ -17,6 +17,8 @@ class SmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ .'/../config/sms.php', 'sms');
+        
         $this->app->bind(DriverInterface::class, function ($app) {
             $config = $app->config;
             switch ($config['sms.default']) {
@@ -43,8 +45,6 @@ class SmsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ .'/../config/sms.php', 'laravel-sms');
-
         $this->publishes([
             __DIR__.'/../config/sms.php' => config_path('sms.php')
         ],'laravel-sms');
