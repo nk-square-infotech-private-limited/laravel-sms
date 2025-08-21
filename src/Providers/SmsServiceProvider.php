@@ -7,6 +7,7 @@ use Nksquare\Sms\Client;
 use Nksquare\Sms\Drivers\DriverInterface;
 use Nksquare\Sms\Drivers\Textlocal;
 use Nksquare\LaravelSms\Exceptions\DriverNotFoundException;
+use Nksquare\Sms\Drivers\Arihant;
 
 class SmsServiceProvider extends ServiceProvider
 {
@@ -29,7 +30,14 @@ class SmsServiceProvider extends ServiceProvider
                         'test' => $config['sms.drivers.textlocal.test'] ?? false
                     ]);
                     break;
-                
+                case 'arihant':
+                    $driver = new Arihant([
+                        'username' => $config['sms.drivers.arihant.username'],
+                        'password' => $config['sms.drivers.arihant.password'],
+                        'sender' => $config['sms.drivers.arihant.sender'],
+                        'dlt_pe' => $config['sms.drivers.arihant.dlt_pe'],
+                    ]);
+                    break;
                 default:
                     throw new DriverNotFoundException();
                     break;

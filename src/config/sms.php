@@ -24,6 +24,12 @@ return [
             'apikey' => env('TEXTLOCAL_APIKEY'),
             'sender' => env('TEXTLOCAL_SENDER'),
             'test' => false,
+        ],
+        'arihant' => [
+            'username' => env('ARIHANT_USERNAME'),
+            'password' => env('ARIHANT_PASSWORD'),
+            'sender'   => env('ARIHANT_SENDER'),
+            'dlt_pe'   => env('ARIHANT_DLT_PE'),
         ]
     ]
 ];
